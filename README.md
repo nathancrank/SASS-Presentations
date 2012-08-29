@@ -7,3 +7,5 @@ The presentation slides are available [on my Google Drive](https://docs.google.c
 The master branch is the default starting point for each presentation.
 
 Each other branch represents a unique presentation.
+
+Feel free to reuse the presentation slides and demos. Please just give me due credit.
