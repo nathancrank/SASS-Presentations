@@ -1,0 +1,125 @@
+// slide 35
+@mixin animate($time: .5s, $ease: ease-in-out, $prop: all) {
+  -webkit-transition: $prop $time $ease;
+  -moz-transition: $prop $time $ease;
+  -o-transition: $prop $time $ease;
+  transition: $prop $time $ease;
+}
+
+// slide 36
+@mixin box-sizing {
+  * {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+          box-sizing: border-box;
+    }
+}
+
+// slide 37
+@mixin linkColors($color: blue) {
+  color: $color;
+  &:hover {
+    color: $color + #222;
+  }
+  &:active {
+    color: $color - #222;
+  }
+}
+
+// slide 38
+@mixin tablet {
+  @media (min-width: 57em) {
+    @content
+  }
+}
+@mixin desktop {
+  @media (min-width: 67em) {
+    @content
+  }
+}
+
+// slide 39
+@mixin desktop($min: 67em) {
+  @media (min-width: $min) {
+    @content
+  }
+}
+
+// slide 40
+@mixin ie7 {
+  .lt-ie8 & { @content }
+}
+@mixin ie8 {
+  .lt-ie9 & { @content }
+}
+
+// slide 42
+@mixin variableSizing($min: 57, $max: 157, $base: 1.2) {
+  $i: $min;
+  @for $i from $min through $max {
+    @media (min-width: #{$i}em) {
+      font-size: #{exponent($i,1,3)/3}em;
+    }
+  }
+}
+
+// slide 43
+@mixin rd-variable($min: 57, $max: 157, $base: 1.2, $inc: 1) {
+  $i: $min;
+  @while $i < $max {
+    @media (min-width: #{$i}em) {
+      font-size: #{exponent($i,1,3)/3.6}em;
+    }
+    $i: $i + $inc;
+  }
+}
+
+// slide 44
+@mixin borders($sides) {
+  @each $side in $sides {
+    border-#{$side}: 2px solid red;
+  }
+}
+
+// slide 45
+@mixin rd-background-image($img: "default", $ext: "png", $state: "", $inc: 1, $max: 2, $min: 1, $delim: "_") {
+  $i: $min;
+  @while $i <= $max {
+    @if $state == "" {
+      @if $i == 1 { background-image: url($img + "." + $ext); }
+      @else {
+        @media (-webkit-min-device-pixel-ratio: $i), /* Webkit */
+               (min-resolution: $i + "dppx") /* standard */ {
+          background-image: url($img + $delim + $i + "x" + "." + $ext);
+        }
+      }
+    } @else {
+      @if $i == 1 { background-image: url($img + $delim + $state + "." + $ext); }
+      @else {
+        @media (-webkit-min-device-pixel-ratio: $i), /* Webkit */
+               (min-resolution: $i + "dppx") /* standard */ {
+          background-image: url($img + $delim + $state + $delim + $i + "x" + "." + $ext);
+        }
+      }
+    }
+    $i: $i + $inc;
+  }
+}
+
+// slide 48
+@function exponent($num,$exp) {
+  $value: $num;
+  $neg: false;
+  @if $exp < 0 {
+    $exp: $exp * -1;
+    $neg: true;
+  }
+  @for $i from 1 to $exp {
+    $value: $value * $num;
+  }
+  @if $neg == true {
+    @return 1/$value;
+  } @else {
+    @return $value;
+  }
+}
