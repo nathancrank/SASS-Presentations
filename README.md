@@ -1,5 +1,5 @@
-# SASS Presentations
-© 2012 Nathan Crank
+# Nathan Crank Presents SASS
+© 2012
 
 These are the files for the demos during my presentations on SASS.
 
