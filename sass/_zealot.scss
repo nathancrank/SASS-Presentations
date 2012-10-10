@@ -1,0 +1,550 @@
+// Zealot v0.1
+// Making SASS more awesome
+// Nathan Crank
+
+
+
+
+//////////////////////////////////////////////////////
+// Math
+//////////////////////////////////////////////////////
+
+// absolute negative (I know I made that term up) returns -|x|
+@function absNeg($value: 1) {
+  @return -1 * abs($value);
+}
+
+@function floatingTruncate($value: 3.141519265, $places: 2) {
+  // @debug "Truncating #{$value} #{$places} places";
+  @if $places < 0 { $places: abs($places); }
+  $places: floor($places);
+  $int: floor($value);
+  $dec: $value - $int;
+  $working: $dec;
+
+  $fp1: 0; $fp2: 0;
+  $fp3: 0; $fp4: 0;
+  $fp5: 0; $fp6: 0;
+  $fp7: 0; $fp8: 0;
+  $fp9: 0;
+
+  $sub: .1;
+  $spot: 1;
+  @while $spot <= $places {
+    $count: 0;
+    @while $working > 0 {
+      $working: $working - $sub;
+      $count: $count + 1;
+    }
+    @if $working < 0 {
+      $count: $count - 1;
+      $working: $working + $sub;
+    }
+    $count: floor($count);
+    $count: $count*$sub;
+
+    @if $sub == .1 {
+      $fp1: $count;
+      // @debug $fp1;
+    }
+    @else if $sub == .01 {
+      $fp2: $count;
+      // @debug $fp2;
+    }
+    @else if $sub == .001 {
+      $fp3: $count;
+      // @debug $fp3;
+    }
+    @else if $sub == .0001 {
+      $fp4: $count;
+      // @debug $fp4;
+    }
+    @else if $sub == .00001 {
+      $fp5: $count;
+      // @debug $fp5;
+    }
+    @else if $sub == .000001 {
+      $fp6: $count;
+      // @debug $fp6;
+    }
+    @else if $sub == .0000001 {
+      $fp7: $count;
+      // @debug $fp7;
+    }
+    @else if $sub == .00000001 {
+      $fp8: $count;
+      // @debug $fp8;
+    }
+    @else if $sub == .000000001 {
+      $fp9: $count;
+      // @debug $fp9;
+    }
+    $spot: $spot + 1;
+    $sub: $sub / 10;
+  }
+  $ans: 0;
+  @for $i from 1 through $places {
+    @if $i == 1 {
+      $ans: $ans + $fp1;
+    }
+    @else if $i == 2 {
+      $ans: $ans + $fp2;
+    }
+    @else if $i == 3 {
+      $ans: $ans + $fp3;
+    }
+    @else if $i == 4 {
+      $ans: $ans + $fp4;
+    }
+    @else if $i == 5 {
+      $ans: $ans + $fp5;
+    }
+    @else if $i == 6 {
+      $ans: $ans + $fp6;
+    }
+    @else if $i == 7 {
+      $ans: $ans + $fp7;
+    }
+    @else if $i == 8 {
+      $ans: $ans + $fp8;
+    }
+    @else if $i == 9 {
+      $ans: $ans + $fp9;
+    }
+  }
+  $ans: $ans + $int;
+  @return $ans;
+}
+
+@function aproxequal($val1, $val2, $prec: .00002) {
+  @if abs($val1 - $val2) <= $prec { @return true; }
+  @else { @return false; }
+}
+
+@function notaproxequal($val1, $val2) {
+  @if aproxequal($val1, $val2) == false { @return true; }
+  @else { @return false; }
+}
+
+@function nthroot($num,$n: 2) {
+  // @debug "Calculating #{$n}-root for #{$num}";
+  $neg: false;
+  @if $n < 0 {
+    $neg: true;
+  }
+  $num: abs($num);
+  $value: $num;
+  // @debug "guess: #{$value}, x^n: #{exponent($value, $n)}, num: #{$num}, correct: #{$num == exponent($value, $n)}";
+  // @while $num != exponent($value, $n) {
+  @while notaproxequal($num,exponent($value, $n)) {
+    $value: (1 / $n) * ( ( ($n - 1) * $value) + ($num / exponent($value,$n - 1)) );
+    // @debug "guess: #{$value}, x^n: #{exponent($value, $n)}, num: #{$num}, correct: #{$num == exponent($value, $n)}";
+    @if exponent($value, $n) == Infinity { @return null };
+  }
+  @if $neg == true {
+    // @debug "result: #{1/$value}";
+    @return 1/$value;
+  } @else {
+    // @debug "result: #{$value}";
+    @return $value;
+  }
+}
+
+@function sqrt($num) {
+  @return nthroot($num);
+}
+
+@function cubert($num) {
+  @return nthroot($num, 3);
+}
+
+@function exponent($num,$expN,$expD: 1) {
+  $value: $num;
+  $neg: false;
+  $expDCalc: false;
+  @if $expN < 0 {
+    $expN: $expN * -1;
+    $neg: true;
+  }
+  @if $expD != 1 {
+    $expDCalc: true;
+    @if $expD < 0 {
+      $expD: $expD * -1;
+      @if $neg == true { $neg: false; }
+      @else { $neg: true; }
+    }
+  }
+  @for $i from 1 to $expN {
+    $value: $value * $num;
+  }
+  @if $expDCalc == true { $value: nthroot($value,$expD); }
+  @if $neg == true {
+    @return 1/$value;
+  } @else {
+    @return $value;
+  }
+}
+
+@function square($num) {
+  @return exponent($num, 2);
+}
+
+@function cube($num) {
+  @return exponent($num, 3);
+}
+
+
+
+//////////////////////////////////////////////////////
+// Images
+//////////////////////////////////////////////////////
+
+@mixin zealot-backstretch($pos1: center, $pos2: center) {
+  background: {
+    size: cover;
+    position: $pos1 $pos2;
+    attachment: fixed;
+    repeat: no-repeat;
+  }
+}
+
+
+
+
+//////////////////////////////////////////////////////
+// Hiding
+//////////////////////////////////////////////////////
+// Hiding techniques based off those found in v4 of
+// the HTML5 boilerplate http://h5bp.com
+
+@mixin zealot-image-replacement() {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px;
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 125%;
+  }
+}
+
+@mixin zealot-hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+@mixin zealot-hidden-visually($focusable: false) {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  @if $focusable == "focusable" {
+    &:active, &:focus {
+      clip: auto;
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      position: static;
+      width: auto;
+    }
+  }
+}
+
+@mixin zealot-invisible {
+  visibility: hidden;
+}
+
+
+
+
+//////////////////////////////////////////////////////
+// Forms
+//////////////////////////////////////////////////////
+
+// image replacement radio buttons
+@mixin zealot-radio-replacement($checked: "radio_checked.svg", $unchecked: "radio_unchecked.svg") {
+  input {
+    display: none;
+    .lt-ie9 & { display: inline; }
+  }
+  label {
+    padding-left: 1.25em;
+    margin-right: 1em;
+    background: {
+      image: url($checked);
+      size: 1em 1em;
+      repeat: no-repeat;
+    }
+    .lt-ie9 & {
+      padding-left: 5px !important;
+      background: none;
+    }
+  }
+  input:checked + label {
+    background: {
+      image: url($unchecked);
+      size: 1em 1em;
+      repeat: no-repeat;
+    }
+    .lt-ie9 { background: none; }
+  }
+}
+
+// image replacement checkboxes 
+@mixin zealot-checkbox-replacement($checked: "checkbox_checked.svg", $unchecked: "checkbox_unchecked.svg") {
+  input {
+    display: none;
+    .lt-ie9 & { display: inline; }
+  }
+  label {
+    padding-left: 1.25em;
+    padding-top: .15em;
+    margin-right: 1em;
+    background: {
+      image: url($checked);
+      size: 1em 1em;
+      repeat: no-repeat;
+    }
+    .lt-ie9 & {
+      padding-left: 5px !important;
+      background: none;
+    }
+  }
+  input:checked + label {
+    background: {
+      image: url($unchecked);
+      size: 1em 1em;
+      repeat: no-repeat;
+    }
+    .lt-ie9 & {
+      background: none;
+    }
+  }
+}
+
+
+
+
+//////////////////////////////////////////////////////
+// Colors
+//////////////////////////////////////////////////////
+
+@mixin zealot-rgba($red,$green,$blue,$alpha) {
+  background-color: rgb($red,$green,$blue);
+  background-color: rgba($red,$green,$blue, $alpha);
+}
+@mixin zealot-alpha($hex,$alpha) {
+  background-color: rgb($hex,$blue);
+  background-color: rgba($hex, $alpha); 
+}
+
+
+
+
+//////////////////////////////////////////////////////
+// Animations
+//////////////////////////////////////////////////////
+
+@mixin zealot-animate($time: .5s, $ease: ease-in-out, $prop: all) {
+  -webkit-transition: $prop $time $ease;
+  -moz-transition: $prop $time $ease;
+  -o-transition: $prop $time $ease;
+  transition: $prop $time $ease;
+}
+
+
+
+
+//////////////////////////////////////////////////////
+// Printing
+//////////////////////////////////////////////////////
+// Printing defaults from HTML5 Boilerplate
+@mixin zealot-print {
+  @media print {
+    * {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow:none !important;
+      text-shadow: none !important;
+    }
+    a, a:visited { text-decoration: underline;  }
+    pre, blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+    thead { display: table-header-group; }
+    tr, img { page-break-inside: avoid; }
+    img { max-width: 100% !important; }
+    @page { margin: 0.5cm; }
+    p, h2, h3 {
+      orphans: 3;
+      widows: 3;
+    }
+    h2, h3 { page-break-after: avoid; }
+  }
+}
+
+@mixin zealot-print-hrefs {
+  @include zealot-print;
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+      content: "";
+  }
+}
+
+
+
+
+//////////////////////////////////////////////////////
+// Styling
+//////////////////////////////////////////////////////
+
+@mixin zealot-box-emboss($opacity: .25, $opacity2: .25, $white: #fff, $black: #000) {
+    box-shadow: rgba($white, $opacity) 0 1px 0, inset rgba($black, $opacity2) 0 1px 0;
+}
+
+@mixin zealot-letterpress($opacity: .25, $hex: #fff) {
+    text-shadow: rgba($hex, $opacity) 0 1px 0;
+}
+
+@mixin zealot-arrow($position: right, $size: 2em, $color: #d00d1e, $borderWidth: .25em, $borderColor: #ff1a3c) {
+  position: relative;
+
+  $positionSwapped: "";
+  @if $position == top { $positionSwapped: bottom; }
+  @else if $position == right { $positionSwapped: left; }
+  @else if $position == bottom { $positionSwapped: top; }
+  @else { $positionSwapped: right; }
+  
+  $positioningSide: "";
+  @if $position == top or $position == bottom { $positioningSide: left; }
+  @else { $positioningSide: top; }
+
+  $bordered: "";
+  @if $borderWidth > 0 { $bordered: ", &:before"; }
+
+  &:after#{$bordered} {
+    #{$positionSwapped}: 100%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    #{$positioningSide}: 50%;
+    border-color: rgba(0,0,0,0);
+  }
+
+  &:after {
+    border-#{$positionSwapped}-color: $color;
+    border-width: $size;
+    margin-#{$positioningSide}: absNeg($size);
+  }
+  @if $borderWidth > 0 {
+    &:before {
+      $realBorderWidth: $borderWidth * 1.3;
+      border-#{$positionSwapped}-color: $borderColor;
+      border-width: $size + $realBorderWidth;
+      margin-#{$positioningSide}: absNeg($size + $realBorderWidth);
+    }
+  }
+}
+
+
+
+
+
+//////////////////////////////////////////////////////
+// Lists
+//////////////////////////////////////////////////////
+
+@mixin zealot-list-horizontal {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  li {
+    display: block;
+    float: left;
+    &:last-child {
+      margin-right:0px;
+    }
+  }
+}
+
+@mixin zealot-list-inline {
+  list-style-type: none;
+  &, li {
+    margin: 0px;
+    padding: 0px;
+    display: inline; }
+}
+
+@mixin zealot-list-delimited($delim: ", ") {
+  @include zealot-list-inline;
+  li {
+    &:after {
+      content: $delim;
+    }
+    &:last-child {
+      &:after {
+        content: "";
+      }
+    }
+  }
+}
+
+
+
+
+//////////////////////////////////////////////////////
+// Columns
+//////////////////////////////////////////////////////
+
+@mixin zealot-columns($count,$gap) {
+  -webkit-column-count: $count;
+  -webkit-column-gap: $gap;
+  -moz-column-count: $count;
+  -moz-column-gap: $gap;
+  -o-column-count: $count;
+  -o-column-gap: $gap;
+  -ms-column-count: $count;
+  -ms-column-gap: $gap;
+  column-count: $count;
+  column-gap: $gap;
+}
+@mixin zealot-columns-break-before($prop) {
+  -webkit-column-break-before: $prop;
+  -moz-column-break-before: $prop;
+  -o-column-break-before: $prop;
+  -ms-column-break-before: $prop;
+  column-break-before: $prop;
+}
+@mixin zealot-columns-break-after($prop) {
+  -webkit-column-break-after: $prop;
+  -moz-column-break-after: $prop;
+  -o-column-break-after: $prop;
+  -ms-column-break-after: $prop;
+  column-break-after: $prop;
+}
+@mixin zealot-columns-break-inside($prop) {
+  -webkit-column-break-inside: $prop;
+  -moz-column-break-inside: $prop;
+  -o-column-break-inside: $prop;
+  -ms-column-break-inside: $prop;
+  column-break-inside: $prop;
+}
+
+
+
+
+

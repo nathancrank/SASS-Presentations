@@ -1,0 +1,145 @@
+/* line 1, ../sass/screen.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 7, ../sass/screen.scss */
+body {
+  font-family: Georgia, Times New Roman, serif;
+  color: #272727;
+}
+
+/* line 12, ../sass/screen.scss */
+html {
+  background-color: #e0ded9;
+}
+
+/* line 16, ../sass/screen.scss */
+header {
+  font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #aa311f;
+}
+
+/* line 24, ../sass/screen.scss */
+div[role="main"] {
+  width: 100%;
+  padding: 1em;
+}
+
+/* line 29, ../sass/screen.scss */
+article {
+  width: 100%;
+  margin-bottom: 7em;
+}
+
+/* line 34, ../sass/screen.scss */
+article p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+}
+
+/* line 39, ../sass/screen.scss */
+h1 {
+  font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
+  font-size: 1.8em;
+}
+
+/* line 44, ../sass/screen.scss */
+h2 {
+  font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
+  color: #aa311f;
+}
+
+/* line 49, ../sass/screen.scss */
+aside {
+  width: 100%;
+  padding: 1em;
+}
+
+/* line 54, ../sass/screen.scss */
+aside ul {
+  list-style: square;
+}
+
+/* line 58, ../sass/screen.scss */
+aside p {
+  padding: 1em;
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+/* line 64, ../sass/screen.scss */
+footer {
+  width: 100%;
+  padding: 1em;
+  font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
+  text-align: center;
+  background-color: #272727;
+}
+
+/* line 72, ../sass/screen.scss */
+footer p {
+  color: #e0ded9;
+}
+
+/* line 76, ../sass/screen.scss */
+footer p + p {
+  color: #aa311f;
+}
+
+@media (min-width: 32em) {
+  /* line 81, ../sass/screen.scss */
+  header {
+    font-size: 3.5em;
+  }
+
+  /* line 84, ../sass/screen.scss */
+  h1 {
+    font-size: 2em;
+  }
+}
+@media (min-width: 57em) {
+  /* line 90, ../sass/screen.scss */
+  header {
+    font-size: 4.5em;
+  }
+
+  /* line 93, ../sass/screen.scss */
+  h1 {
+    font-size: 2.5em;
+  }
+
+  /* line 96, ../sass/screen.scss */
+  div[role="main"] {
+    vertical-align: top;
+    display: inline-block;
+    width: 75%;
+  }
+
+  /* line 101, ../sass/screen.scss */
+  aside {
+    display: inline-block;
+    width: 24%;
+  }
+}
+@media (min-width: 77em) {
+  /* line 108, ../sass/screen.scss */
+  body {
+    padding: 0 5em;
+  }
+
+  /* line 111, ../sass/screen.scss */
+  header {
+    font-size: 5.5em;
+  }
+
+  /* line 114, ../sass/screen.scss */
+  h1 {
+    font-size: 3em;
+  }
+}
