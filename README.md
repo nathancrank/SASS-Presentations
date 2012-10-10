@@ -11,7 +11,7 @@ The slides in /presentation are provided under no license, for educational purpo
 
 All other files are released under the MIT (Expat) license.
 
-Please read the License file for more information.
+Please read the license.md file for more information.
 
 
 Follow me on twitter [@nathancrank](http://twitter.com/nathancrank) or feel free to [email](mailto:me@nathancrank.com) me with any questions.
