@@ -14,8 +14,11 @@ html {
 }
 
 header {
+  margin-bottom: .2em;
+  padding-bottom: .2em;
+  border-bottom: .2em solid #aa311f;
   font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
-  font-size: 2.5em;
+  font-size: 1em;
   font-weight: bold;
   text-align: center;
   color: #aa311f;
@@ -79,7 +82,7 @@ footer p + p {
 
 @media (min-width: 32em) {
   header {
-    font-size: 3.5em;
+    font-size: 1.5em;
   }
   h1 {
     font-size: 2em;
@@ -88,7 +91,7 @@ footer p + p {
 
 @media (min-width: 57em) {
   header {
-    font-size: 4.5em;
+    font-size: 2em;
   }
   h1 {
     font-size: 2.5em;
@@ -107,9 +110,6 @@ footer p + p {
 @media (min-width: 77em) {
   body {
     padding: 0 5em;
-  }
-  header {
-    font-size: 5.5em;
   }
   h1 {
     font-size: 3em;
