@@ -1,6 +1,6 @@
-# License for SASS.key:
+# License for /presentation:
 
-The Keynote slides are provided under no license, for educational purposes only; they may not be redistributed or presented for any reason without prior written consent from me, Nathan Crank. You can contact me at the email address me@nathancrank.com.
+The slides are provided under no license, for educational purposes only; they may not be redistributed, modified or presented for any reason without prior written consent from me, Nathan Crank. You can contact me at the email address me@nathancrank.com.
 
 
 
