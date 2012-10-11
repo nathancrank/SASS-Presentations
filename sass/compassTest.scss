@@ -1,0 +1,8 @@
+@import "compass";
+
+article {
+
+  @include background-image(linear-gradient(right top, white, #dddddd));
+
+
+}

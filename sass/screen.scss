@@ -1,3 +1,10 @@
+@import "normalize",
+        "spec",
+        "zealot",
+        "sensible",
+        "compass";
+
+// Styles
 * {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
@@ -6,7 +13,7 @@
 
 body {
   font-family: Georgia, Times New Roman, serif;
-  color: #272727;
+  color: $brandBlack;
 }
 
 html {
@@ -16,12 +23,27 @@ html {
 header {
   margin-bottom: .2em;
   padding-bottom: .2em;
-  border-bottom: .2em solid #aa311f;
-  font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
-  font-size: 1em;
-  font-weight: bold;
+  border-bottom: .2em solid $brandRed + $brandRed;
+  font: { 
+    family: $fontHeadline;
+    size: 1em;
+    weight: bold;
+    style: italic;
+  }
+  @include sens-tablet {
+    font-size: 2.5em;
+  }
   text-align: center;
-  color: #aa311f;
+  color: $brandRed;
+
+  // @include zealot-arrow(bottom, 1em, $brandRed, .25em, #ff1a3c);
+}
+
+nav {
+  ul {
+    @include zealot-list-horizontal;
+    @include background-image(linear-gradient($brandBlack + #999, $brandBlack));
+  }
 }
 
 div[role="main"] {
@@ -29,19 +51,27 @@ div[role="main"] {
   padding: 1em;
 }
 
-article {
-  width: 100%;
-  margin-bottom: 7em;
+%bodyCopy {
+  color: $brandBlack;
+  font-family: $fontBody;
 }
 
-article p {
-  font-size: 1.2em;
-  line-height: 1.6em;
+article {
+  @extend %bodyCopy;
+  width: 100%;
+  margin-bottom: 7em;
+  p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+  }
 }
 
 h1 {
   font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
   font-size: 1.8em;
+  @media (min-width: 32em) {
+    font-size: 2em;
+  }
 }
 
 h2 {
@@ -52,16 +82,15 @@ h2 {
 aside {
   width: 100%;
   padding: 1em;
-}
-
-aside ul {
-  list-style: square;
-}
-
-aside p {
- padding: 1em;
- font-size: 1em;
- line-height: 1.4em;
+  ul {
+    list-style: square;
+  }
+  p {
+   @extend %bodyCopy;
+   padding: 1em;
+   font-size: 1em;
+   line-height: 1.4em;
+  }
 }
 
 footer {
@@ -69,7 +98,7 @@ footer {
   padding: 1em;
   font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
   text-align: center;
-  background-color: #272727;
+  background-color: $brandBlack;
 }
 
 footer p {
@@ -78,15 +107,6 @@ footer p {
 
 footer p + p {
   color: #aa311f;
-}
-
-@media (min-width: 32em) {
-  header {
-    font-size: 1.5em;
-  }
-  h1 {
-    font-size: 2em;
-  }
 }
 
 @media (min-width: 57em) {
@@ -98,11 +118,11 @@ footer p + p {
   }
   div[role="main"] {
     vertical-align: top;
-    display: inline-block;
+    @include inline-block;
     width: 75%;
   }
   aside {
-    display: inline-block;
+    @include inline-block;
     width: 24%;
   }
 }

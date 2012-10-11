@@ -1,0 +1,8 @@
+/* line 3, ../sass/compassTest.scss */
+article {
+  background-image: -webkit-gradient(linear, 100% 0%, 0% 100%, color-stop(0%, #ffffff), color-stop(100%, #dddddd));
+  background-image: -webkit-linear-gradient(right top, #ffffff, #dddddd);
+  background-image: -moz-linear-gradient(right top, #ffffff, #dddddd);
+  background-image: -o-linear-gradient(right top, #ffffff, #dddddd);
+  background-image: linear-gradient(right top, #ffffff, #dddddd);
+}

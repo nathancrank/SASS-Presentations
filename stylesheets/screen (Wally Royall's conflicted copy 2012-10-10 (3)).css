@@ -5,7 +5,7 @@
 /*
  * Corrects `block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-/* line 21, ../sass/_normalize.scss */
+/* line 21, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 article,
 aside,
 details,
@@ -23,7 +23,7 @@ summary {
 /*
  * Corrects `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
  */
-/* line 31, ../sass/_normalize.scss */
+/* line 31, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 audio,
 canvas,
 video {
@@ -36,7 +36,7 @@ video {
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 42, ../sass/_normalize.scss */
+/* line 42, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -47,7 +47,7 @@ audio:not([controls]) {
  * and Safari 4.
  * Known issue: no IE 6 support.
  */
-/* line 53, ../sass/_normalize.scss */
+/* line 53, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 [hidden] {
   display: none;
 }
@@ -61,7 +61,7 @@ audio:not([controls]) {
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 68, ../sass/_normalize.scss */
+/* line 68, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 html {
   font-size: 100%;
   /* 1 */
@@ -75,7 +75,7 @@ html {
  * Addresses `font-family` inconsistency between `textarea` and other form
  * elements.
  */
-/* line 83, ../sass/_normalize.scss */
+/* line 83, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 html,
 button,
 input,
@@ -87,7 +87,7 @@ textarea {
 /*
  * Addresses margins handled incorrectly in IE 6/7.
  */
-/* line 91, ../sass/_normalize.scss */
+/* line 91, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 body {
   margin: 0;
 }
@@ -98,7 +98,7 @@ body {
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
-/* line 103, ../sass/_normalize.scss */
+/* line 103, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 a:focus {
   outline: thin dotted;
 }
@@ -106,7 +106,7 @@ a:focus {
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
  */
-/* line 112, ../sass/_normalize.scss */
+/* line 112, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 a:active,
 a:hover {
   outline: 0;
@@ -120,37 +120,37 @@ a:hover {
  * Addresses font sizes within `section` and `article` in Firefox 4+, Safari 5,
  * and Chrome.
  */
-/* line 126, ../sass/_normalize.scss */
+/* line 126, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* line 131, ../sass/_normalize.scss */
+/* line 131, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 h2 {
   font-size: 1.5em;
   margin: 0.83em 0;
 }
 
-/* line 136, ../sass/_normalize.scss */
+/* line 136, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 h3 {
   font-size: 1.17em;
   margin: 1em 0;
 }
 
-/* line 141, ../sass/_normalize.scss */
+/* line 141, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 h4 {
   font-size: 1em;
   margin: 1.33em 0;
 }
 
-/* line 146, ../sass/_normalize.scss */
+/* line 146, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 h5 {
   font-size: 0.83em;
   margin: 1.67em 0;
 }
 
-/* line 151, ../sass/_normalize.scss */
+/* line 151, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 h6 {
   font-size: 0.75em;
   margin: 2.33em 0;
@@ -159,7 +159,7 @@ h6 {
 /*
  * Addresses styling not present in IE 7/8/9, Safari 5, and Chrome.
  */
-/* line 160, ../sass/_normalize.scss */
+/* line 160, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -167,13 +167,13 @@ abbr[title] {
 /*
  * Addresses style set to `bolder` in Firefox 3+, Safari 4/5, and Chrome.
  */
-/* line 169, ../sass/_normalize.scss */
+/* line 169, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 b,
 strong {
   font-weight: bold;
 }
 
-/* line 173, ../sass/_normalize.scss */
+/* line 173, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 blockquote {
   margin: 1em 40px;
 }
@@ -181,7 +181,7 @@ blockquote {
 /*
  * Addresses styling not present in Safari 5 and Chrome.
  */
-/* line 181, ../sass/_normalize.scss */
+/* line 181, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 dfn {
   font-style: italic;
 }
@@ -189,7 +189,7 @@ dfn {
 /*
  * Addresses styling not present in IE 6/7/8/9.
  */
-/* line 189, ../sass/_normalize.scss */
+/* line 189, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 mark {
   background: #ff0;
   color: #000;
@@ -198,7 +198,7 @@ mark {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-/* line 199, ../sass/_normalize.scss */
+/* line 199, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 p,
 pre {
   margin: 1em 0;
@@ -207,7 +207,7 @@ pre {
 /*
  * Corrects font family set oddly in IE 6, Safari 4/5, and Chrome.
  */
-/* line 210, ../sass/_normalize.scss */
+/* line 210, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 code,
 kbd,
 pre,
@@ -220,7 +220,7 @@ samp {
 /*
  * Improves readability of pre-formatted text in all browsers.
  */
-/* line 220, ../sass/_normalize.scss */
+/* line 220, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -230,7 +230,7 @@ pre {
 /*
  * Addresses CSS quotes not supported in IE 6/7.
  */
-/* line 230, ../sass/_normalize.scss */
+/* line 230, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 q {
   quotes: none;
 }
@@ -238,7 +238,7 @@ q {
 /*
  * Addresses `quotes` property not supported in Safari 4.
  */
-/* line 239, ../sass/_normalize.scss */
+/* line 239, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 q:before,
 q:after {
   content: '';
@@ -248,7 +248,7 @@ q:after {
 /*
  * Addresses inconsistent and variable font size in all browsers.
  */
-/* line 248, ../sass/_normalize.scss */
+/* line 248, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 small {
   font-size: 80%;
 }
@@ -256,7 +256,7 @@ small {
 /*
  * Prevents `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 257, ../sass/_normalize.scss */
+/* line 257, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 sub,
 sup {
   font-size: 75%;
@@ -265,12 +265,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 264, ../sass/_normalize.scss */
+/* line 264, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 268, ../sass/_normalize.scss */
+/* line 268, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 sub {
   bottom: -0.25em;
 }
@@ -281,7 +281,7 @@ sub {
 /*
  * Addresses margins set differently in IE 6/7.
  */
-/* line 283, ../sass/_normalize.scss */
+/* line 283, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 dl,
 menu,
 ol,
@@ -289,7 +289,7 @@ ul {
   margin: 1em 0;
 }
 
-/* line 287, ../sass/_normalize.scss */
+/* line 287, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 dd {
   margin: 0 0 0 40px;
 }
@@ -297,7 +297,7 @@ dd {
 /*
  * Addresses paddings set differently in IE 6/7.
  */
-/* line 297, ../sass/_normalize.scss */
+/* line 297, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 menu,
 ol,
 ul {
@@ -307,7 +307,7 @@ ul {
 /*
  * Corrects list images handled incorrectly in IE 7.
  */
-/* line 306, ../sass/_normalize.scss */
+/* line 306, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 nav ul,
 nav ol {
   list-style: none;
@@ -321,7 +321,7 @@ nav ol {
  * 1. Removes border when inside `a` element in IE 6/7/8/9 and Firefox 3.
  * 2. Improves image quality when scaled in IE 7.
  */
-/* line 320, ../sass/_normalize.scss */
+/* line 320, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 img {
   border: 0;
   /* 1 */
@@ -332,7 +332,7 @@ img {
 /*
  * Corrects overflow displayed oddly in IE 9.
  */
-/* line 329, ../sass/_normalize.scss */
+/* line 329, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -343,7 +343,7 @@ svg:not(:root) {
 /*
  * Addresses margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
  */
-/* line 341, ../sass/_normalize.scss */
+/* line 341, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 figure {
   margin: 0;
 }
@@ -354,7 +354,7 @@ figure {
 /*
  * Corrects margin displayed oddly in IE 6/7.
  */
-/* line 353, ../sass/_normalize.scss */
+/* line 353, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 form {
   margin: 0;
 }
@@ -362,7 +362,7 @@ form {
 /*
  * Define consistent border, margin, and padding.
  */
-/* line 361, ../sass/_normalize.scss */
+/* line 361, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -374,7 +374,7 @@ fieldset {
  * 2. Corrects text not wrapping in Firefox 3.
  * 3. Corrects alignment displayed oddly in IE 6/7.
  */
-/* line 373, ../sass/_normalize.scss */
+/* line 373, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -391,7 +391,7 @@ legend {
  *    and Chrome.
  * 3. Improves appearance and consistency in all browsers.
  */
-/* line 390, ../sass/_normalize.scss */
+/* line 390, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 button,
 input,
 select,
@@ -410,7 +410,7 @@ textarea {
  * Addresses Firefox 3+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 403, ../sass/_normalize.scss */
+/* line 403, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 button,
 input {
   line-height: normal;
@@ -425,7 +425,7 @@ input {
  * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-/* line 420, ../sass/_normalize.scss */
+/* line 420, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -441,7 +441,7 @@ input[type="submit"] {
 /*
  * Re-set default cursor for disabled elements.
  */
-/* line 431, ../sass/_normalize.scss */
+/* line 431, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -453,7 +453,7 @@ input[disabled] {
  * 3. Removes excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-/* line 443, ../sass/_normalize.scss */
+/* line 443, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -471,7 +471,7 @@ input[type="radio"] {
  * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 456, ../sass/_normalize.scss */
+/* line 456, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -485,7 +485,7 @@ input[type="search"] {
  * Removes inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-/* line 469, ../sass/_normalize.scss */
+/* line 469, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
@@ -494,7 +494,7 @@ input[type="search"]::-webkit-search-decoration {
 /*
  * Removes inner padding and border in Firefox 3+.
  */
-/* line 478, ../sass/_normalize.scss */
+/* line 478, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -505,7 +505,7 @@ input::-moz-focus-inner {
  * 1. Removes default vertical scrollbar in IE 6/7/8/9.
  * 2. Improves readability and alignment in all browsers.
  */
-/* line 488, ../sass/_normalize.scss */
+/* line 488, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 textarea {
   overflow: auto;
   /* 1 */
@@ -519,31 +519,31 @@ textarea {
 /*
  * Remove most spacing between table cells.
  */
-/* line 501, ../sass/_normalize.scss */
+/* line 501, /Users/ncrank/Dropbox/presentations/SASS/sass_presentation/sass/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 8, ../sass/screen.scss */
+/* line 5, ../sass/screen.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 body {
   font-family: Georgia, Times New Roman, serif;
   color: #373737;
 }
 
-/* line 19, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 html {
   background-color: #e0ded9;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 header {
   margin-bottom: .2em;
   padding-bottom: .2em;
@@ -555,93 +555,71 @@ header {
   text-align: center;
   color: #aa311f;
 }
-@media (min-width: 47em) {
-  /* line 23, ../sass/screen.scss */
+@media (min-width: 32em) {
+  /* line 20, ../sass/screen.scss */
   header {
     font-size: 2.5em;
   }
 }
 
-/* line 43, ../sass/screen.scss */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d0d0d0), color-stop(100%, #373737));
-  background-image: -webkit-linear-gradient(#d0d0d0, #373737);
-  background-image: -moz-linear-gradient(#d0d0d0, #373737);
-  background-image: -o-linear-gradient(#d0d0d0, #373737);
-  background-image: linear-gradient(#d0d0d0, #373737);
-}
-/* line 475, ../sass/_zealot.scss */
-nav ul li {
-  display: block;
-  float: left;
-}
-/* line 478, ../sass/_zealot.scss */
-nav ul li:last-child {
-  margin-right: 0px;
-}
-
-/* line 49, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 div[role="main"] {
   width: 100%;
   padding: 1em;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 article, aside p {
   color: #373737;
   font-family: Georgia, Times New Roman, serif;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 article {
   width: 100%;
   margin-bottom: 7em;
 }
-/* line 63, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 article p {
   font-size: 1.2em;
   line-height: 1.6em;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 h1 {
   font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
   font-size: 1.8em;
 }
 @media (min-width: 32em) {
-  /* line 69, ../sass/screen.scss */
+  /* line 57, ../sass/screen.scss */
   h1 {
     font-size: 2em;
   }
 }
 
-/* line 77, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 h2 {
   font-family: Akzidenz-Grotesk Next, Helvetica, Arial, sans-serif;
   color: #aa311f;
 }
 
-/* line 82, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 aside {
   width: 100%;
   padding: 1em;
 }
-/* line 85, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 aside ul {
   list-style: square;
 }
-/* line 88, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 aside p {
   padding: 1em;
   font-size: 1em;
   line-height: 1.4em;
 }
 
-/* line 96, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 footer {
   width: 100%;
   padding: 1em;
@@ -650,57 +628,47 @@ footer {
   background-color: #373737;
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 footer p {
   color: #e0ded9;
 }
 
-/* line 108, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 footer p + p {
   color: #aa311f;
 }
 
 @media (min-width: 57em) {
-  /* line 113, ../sass/screen.scss */
+  /* line 101, ../sass/screen.scss */
   header {
     font-size: 2em;
   }
 
-  /* line 116, ../sass/screen.scss */
+  /* line 104, ../sass/screen.scss */
   h1 {
     font-size: 2.5em;
   }
 
-  /* line 119, ../sass/screen.scss */
+  /* line 107, ../sass/screen.scss */
   div[role="main"] {
     vertical-align: top;
-    display: -moz-inline-stack;
     display: inline-block;
-    vertical-align: middle;
-    *vertical-align: auto;
-    zoom: 1;
-    *display: inline;
     width: 75%;
   }
 
-  /* line 124, ../sass/screen.scss */
+  /* line 112, ../sass/screen.scss */
   aside {
-    display: -moz-inline-stack;
     display: inline-block;
-    vertical-align: middle;
-    *vertical-align: auto;
-    zoom: 1;
-    *display: inline;
     width: 24%;
   }
 }
 @media (min-width: 77em) {
-  /* line 131, ../sass/screen.scss */
+  /* line 119, ../sass/screen.scss */
   body {
     padding: 0 5em;
   }
 
-  /* line 134, ../sass/screen.scss */
+  /* line 122, ../sass/screen.scss */
   h1 {
     font-size: 3em;
   }
